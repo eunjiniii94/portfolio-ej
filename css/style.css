@@ -1,0 +1,128 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@font-face {
+  font-family: "GangwonEducationModuche";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff")
+    format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GangwonEducationModuche";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+    format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #353535;
+  color: #fff;
+  font-family: "Pretendard", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* lej */
+.hero-shapes {
+  width: 100%;
+  /* height: 1080px; */
+  min-height: 100vh;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.shape {
+  height: 920px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.shape::before {
+  content: "";
+  position: absolute;
+  inset: -20%; /* 이미지가 도형보다 크게 깔림 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translate(var(--move-x, 0), var(--move-y, 0));
+  transition:
+    opacity 0.3s ease,
+    transform 0.15s ease;
+}
+
+.shape:hover::before {
+  opacity: 1;
+}
+
+.shape-left {
+  width: 540px;
+  mask: url("../assets/images/l.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/images/l.svg") center / contain no-repeat;
+}
+
+.shape-center {
+  width: 560px;
+  mask: url("../assets/images/e.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/images/e.svg") center / contain no-repeat;
+}
+.shape-right {
+  width: 560px;
+  mask: url("../assets/images/j.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/images/j.svg") center / contain no-repeat;
+}
+
+.shape-left::before {
+  background-image: url(../assets/images/twosome.png);
+}
+
+.shape-center::before {
+  background-image: url("../assets/images/busan.png");
+}
+
+.shape-right::before {
+  background-image: url("../assets/images/yeosu.png");
+}
