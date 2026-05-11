@@ -317,14 +317,19 @@ section {
   padding: 20px 0 30px 0;
 }
 
-.design-info h3 {
+.design-info h3,
+.app-project h3,
+.app-tool h3,
+.coding-info h3 {
   font-size: 36px;
   font-weight: 700;
   line-height: 160%;
   letter-spacing: -0.02em;
 }
 
-.design-info p {
+.design-info p,
+.app-project p,
+.coding-info p {
   font-size: 20px;
   font-weight: 500;
   line-height: 160%;
@@ -454,7 +459,7 @@ section {
   overflow: hidden;
 }
 .banner-design .section-title {
-  padding: 100px 0px 165px 100px;
+  padding: 130px 0px 165px 130px;
 }
 /* 흐르는 영역 */
 .banner-marquee {
@@ -496,46 +501,413 @@ section {
   }
 }
 
-/* 오버레이 */
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+/* 앱디자인 */
+.app-design {
+  padding: 130px 200px 97px 130px;
+}
+
+.app-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 189px;
+  margin-top: 115px;
+}
+.app-mockup {
+  width: 500px;
+  height: 980px;
+  flex-shrink: 0;
+}
+.app-mockup img {
+  width: 100%;
+  display: block;
+}
+
+/* 핸드폰만 둥둥 */
+.floating {
+  animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-24px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.app-info {
+  padding-top: 0px;
+}
+
+.app-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 116px;
+  margin-top: 0;
+}
+
+.app-logo-img {
+  width: 350px;
+  height: 336px;
+  margin-top: 0;
+  margin-bottom: 66px;
+}
+
+.app-desc {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  margin-bottom: 165px;
+}
+
+.app-detail {
+  display: grid;
+  align-items: end;
+  column-gap: 105px;
+  grid-template-columns: 247px 145px 1fr;
+}
+
+.app-tool-icons {
+  margin-top: 8px;
+}
+
+.app-tool-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.app-buttons {
+  gap: 59px;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+/* 코딩 */
+
+.coding {
+  padding: 130px 0 57px 130px;
+}
+
+.coding-content {
+  display: grid;
+  grid-template-columns: 218px 1fr;
+  align-items: flex-start;
+  column-gap: 160px;
+}
+
+.coding-info {
+  margin-top: 49px;
+}
+
+.coding-tool {
+  margin-top: 50px;
+}
+
+.coding-buttons {
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.coding-mockups {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  gap: 160px;
 }
 
-/* 버튼 */
-.banner-overlay span {
-  padding: 12px 24px;
-  border-radius: 8px;
-  background: #7ddff5;
-  color: #fff;
-  font-size: 20px;
+.coding-mockups img {
+  width: 500px;
+  display: block;
+}
+
+/* 마지막 */
+
+.thanks {
+  padding: 195px 233px;
+}
+
+.thanks-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 219px;
+}
+
+.thanks-text {
+  font-size: 96px;
   font-weight: 700;
-  transform: translateY(12px);
-  transition: transform 0.3s ease;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* 카드에 마우스 올렸을 때만 오버레이 등장 */
-.banner-card:hover .banner-overlay {
-  opacity: 1;
+.thanks-profile {
+  width: 174px;
+  height: 161px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.thanks-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.banner-card:hover .banner-overlay span {
-  transform: translateY(0);
+/* 태블릿 */
+@media screen and (max-width: 1024px) {
 }
 
-@keyframes bannerFlow {
-  from {
-    transform: translateX(0);
+/* 모바일 */
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    padding: 100px 40px;
   }
 
-  to {
-    transform: translateX(-50%);
+  .section-title {
+    font-size: 72px;
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+/* about */
+
+@media screen and (max-width: 1024px) {
+  .about-intro {
+    text-align: center;
+  }
+
+  .about-intro h2 {
+    font-size: 34px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .about-intro p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+
+  .about-intro br {
+    display: none;
+  }
+
+  .about-content {
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+  }
+
+  .profile-img {
+    width: 280px;
+  }
+
+  .about-bottom {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    word-break: keep-all;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about-intro {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .about-intro h2 {
+    font-size: 28px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .about-intro p,
+  .about-desc {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .profile-img {
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  .about-bottom {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 48px;
+  }
+
+  .skill-list {
+    justify-content: center;
+  }
+
+  .about-intro br,
+  .about-desc br {
+    display: none;
+  }
+}
+
+/* 디자인 */
+@media screen and (max-width: 1700px) {
+  .design-list {
+    grid-template-columns: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .design-list {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+
+  .design-item {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .design-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .design-img img {
+    height: auto;
+  }
+
+  .design-info {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-top: 24px;
+  }
+}
+/* 배너 */
+
+@media screen and (max-width: 1024px) {
+  .banner-card {
+    width: 480px;
+    height: 270px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-card {
+    width: 320px;
+    height: 180px;
+  }
+
+  .banner-overlay span {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* 앱디자인 */
+@media screen and (max-width: 1024px) {
+  .app-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .app-info {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .app-title-wrap {
+    justify-content: center;
+  }
+
+  .app-detail {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+  }
+
+  .app-buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-mockup {
+    width: 260px;
+  }
+
+  .app-title-wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .app-logo-img {
+    width: 160px;
+  }
+
+  .app-title-img {
+    width: 280px;
+  }
+
+  .app-desc {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .app-detail {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .app-tool-icons {
+    justify-content: center;
+  }
+
+  .app-buttons {
+    justify-content: center;
   }
 }
