@@ -698,25 +698,58 @@ section {
 /* about */
 
 @media screen and (max-width: 1024px) {
+  .about {
+    padding: 100px 40px;
+  }
   .about-intro {
+    width: 100%;
     text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
   }
 
   .about-intro h2 {
     font-size: 34px;
     line-height: 1.5;
+    margin-bottom: 40px;
     word-break: keep-all;
   }
 
+  .about-desc,
   .about-intro p {
-    max-width: 720px;
+    width: 100%;
+    max-width: 880px;
     margin: 0 auto;
     font-size: 20px;
     line-height: 1.8;
     word-break: keep-all;
   }
 
-  .about-intro br {
+  /* .about-intro h2,
+  .about-intro p,
+  .about-desc {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.5;
+    word-break: keep-all;
+  } */
+
+  /* .about-intro p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.8;
+    word-break: keep-all;
+  } */
+
+  .about-intro br,
+  .about-intro p br {
     display: none;
   }
 
@@ -726,7 +759,16 @@ section {
   }
 
   .profile-img {
-    width: 280px;
+    width: 240px;
+    height: 240px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .about-bottom {
@@ -746,13 +788,19 @@ section {
     max-width: 340px;
     margin: 0 auto;
     text-align: center;
+    padding: 0;
   }
-  .about-intro h2 {
+  .about-intro h2,
+  .about-intro p,
+  .about-desc {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
     font-size: 28px;
     line-height: 1.5;
     word-break: keep-all;
   }
-
+  /* 
   .about-intro p,
   .about-desc {
     width: 100%;
@@ -761,7 +809,7 @@ section {
     font-size: 16px;
     line-height: 1.8;
     word-break: keep-all;
-  }
+  } */
 
   .about-content {
     grid-template-columns: 1fr;
@@ -770,8 +818,16 @@ section {
   }
 
   .profile-img {
-    width: 240px;
+    width: 180px;
+    height: 180px;
+    aspect-ratio: 1/1;
     margin: 0 auto;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .about-bottom {
@@ -909,5 +965,75 @@ section {
 
   .app-buttons {
     justify-content: center;
+  }
+}
+
+/* 무비니티 */
+
+@media screen and (max-width: 1024px) {
+  .coding-content {
+    grid-template-columns: 1fr;
+    gap: 80px;
+    text-align: center;
+  }
+
+  .coding-tool-icons {
+    justify-content: center;
+  }
+
+  .coding-buttons {
+    align-items: center;
+  }
+
+  .coding-mockups {
+    gap: 80px;
+  }
+
+  .coding-mockups img {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .coding-mockups {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .coding-mockups img {
+    width: 260px;
+  }
+}
+
+/* 마지막 */
+
+@media screen and (max-width: 1024px) {
+  .thanks-inner {
+    gap: 60px;
+  }
+
+  .thanks-text {
+    font-size: 64px;
+  }
+
+  .thanks-profile {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .thanks-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .thanks-text {
+    font-size: 42px;
+  }
+
+  .thanks-profile {
+    width: 120px;
+    height: 120px;
   }
 }
