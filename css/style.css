@@ -86,6 +86,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  z-index: 2;
 }
 
 .shape::before {
@@ -111,6 +112,24 @@ section {
   mask: url("../assets/images/l.svg") center / contain no-repeat;
   -webkit-mask: url("../assets/images/l.svg") center / contain no-repeat;
 }
+.year-text {
+  position: absolute;
+  left: 330px;
+  top: 570px;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 160%;
+  transform: translateY(20px);
+  animation: fadeyear 0.8s ease forwards;
+  animation-delay: 0.2;
+}
+
+@keyframes fadeyear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .shape-center {
   width: 560px;
@@ -123,6 +142,54 @@ section {
   -webkit-mask: url("../assets/images/j.svg") center / contain no-repeat;
 }
 
+.portfolio-wrap {
+  position: absolute;
+  right: 250px;
+  bottom: 100px;
+  z-index: 5;
+
+  width: 430px;
+  height: 90px;
+  overflow: contain;
+
+  transform: rotate(-50deg);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* 글자를 가리는 박스 */
+.portfolio-mask {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: portfolioTyping 1.4s steps(9) forwards;
+  animation-delay: 0.5s;
+}
+.portfolio-text {
+  display: block;
+  width: 0;
+
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: contain;
+
+  animation: portfolioTyping 1.4s steps(9) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes portfolioTyping {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 520px;
+  }
+}
 .shape-left::before {
   background-image: url(../assets/images/twosome.png);
 }
